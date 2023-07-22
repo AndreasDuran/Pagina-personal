@@ -1,0 +1,328 @@
+:root {
+        --blanco:#ffffff;
+        --negro: #000000;
+        --obscuro: #212121;
+        --primario: #ffc107;
+        --secundario: #0097a7;
+        --gris: #DAD7D6;
+        --grisobscuro: #757575;
+
+}
+
+/** Global **/
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {  /** Comando para colocar todas las letras por igual **/
+    box-sizing: inherit;
+    font-family: 'Montserrat', sans-serif;
+
+    
+  }
+
+
+  .contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.botoncontacto { 
+
+    background-color: rgba(0, 0, 0, 0.7);   /** Creamos boton transparente que cambie de color cuando se coloca el raton encima**/
+    color: var(--blanco);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    margin-top: 5rem;
+    text-transform: uppercase;
+    border-radius: 5rem; 
+    border: none;
+    
+}
+
+.botoncontacto :hover {
+    background-color: rgba(248, 247, 247, 0.7);
+    color: var(--negro);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    margin-top: 5rem;
+    text-transform: uppercase;
+    border-radius: 5rem; 
+    cursor: pointer;
+}
+
+.sombra {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+}
+  /** Tipografia y Diseno para la vista**/
+
+
+body {
+
+    /** background-image: linear-gradient(to top, var(--negro) 0%, var(--blanco) 100% ); **/    /**CODIGO PARA HACER DEGRADEZ EN FONDO DE PAGINA **/
+
+    font-size: 16px;
+}
+
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+    color: var(--negro);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h1, h2,h3{
+    text-align: center;
+}
+
+span {
+        font-size: 2rem;
+}
+p {
+    color: var(--blanco);
+}
+
+
+/** Titulos y Navegacion **/
+
+.w-100 {
+    width: 100%;
+}
+
+.flex{
+display: flex;
+}
+
+.alinar-derecha {
+
+justify-content: flex-end;
+}
+
+.nav-bg {
+    background-color: var(--negro); /** Creamos el color de la barra **/
+}
+
+.barraseleccion {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (min-width:  768px) {         /** Cambia automaticamente la resolucion **/
+    .barraseleccion {
+        flex-direction: row;
+    }
+    
+}
+.barraseleccion a {               /** Cambia de color la la barra de navegadores **/
+
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1rem;            /** 1rem 0 10px **/
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.barraseleccion a:hover {           /**Usamos para crear el boton que cambia de color**/
+    background-color: var(--gris);
+    color: var(--negro);
+    border-radius: .5rem;
+
+}
+
+
+.titulo2 {
+    text-align: center;
+    color: var(--blanco);
+}
+
+.hero {
+    background-image: url(../img/oficina.jpg);  /** Cargamos una imagen **/
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;                     /** Damos disposicion para que pueda moverse a la etiqueta padre **/
+}
+
+.contenido-hero {                               
+    position: absolute;                         /** Le damos permiso para moverse libremente a la etiqueta hija **/
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+
+    color: var(--blanco);
+}
+
+/** Servicios **/
+
+
+@media (min-width:  768px) {
+    
+
+.servicios {                    /** Para crear columnas verticales **/
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    column-gap: 6rem;
+    background-color: rgba(0, 0,0, 0.1);
+    border-radius: 2rem;
+}
+}
+
+.servicio {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     
+}
+
+
+.servicio p {
+    line-height: 2;
+    color: var(--negro);
+}
+
+.servicio .iconos {
+    height: 6rem;
+    width: 6rem;
+    background-color: var(--blanco);
+    border-radius: 50rem ;
+    display: flex;
+    justify-content: space-evenly;  /** Alinear horizontalmente **/
+    align-items: center;  /** Alinear verticalmente  **/
+}
+
+
+/** Contacto **/
+
+.formulario {
+
+    background-color: var(--gris);
+    background-color: rgba(0, 0,0, 0.7);
+    border-radius: 1rem;
+    width: min(60rem, 100%); /**Utiliza el valor mas pequeno**/
+    margin: 0 auto; /**Utilizarlo mientras el padre no tenga un Dislay Flex**/
+    padding: 10rem;    
+}
+
+.formulario fieldset { /** Para quitar bordes al formulario **/
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2.0rem;
+    color: var(--blanco);
+}
+
+/**Editar los campos del formulario**/
+.campo{
+    margin-bottom: 2rem;
+}
+
+input::-webkit-outer-spin-button,  /** Chrome **/ /**Removedor de flechitas en el input tipo numerico**/
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {     /** firefox **/
+    appearance: textfield;
+}
+
+@media (min-width:  768px) {
+    
+.contenedor-campos {   /** Creacion de la columnas del formulario **/
+    display: grid;     
+    grid-template-columns: repeat(2, 4fr); /** Define las areas de la columnas **/
+    grid-template-rows: auto auto 20rem;   /** Define las filas **/
+    column-gap: 2rem;  /** separacion de columnas **/
+
+}
+}
+
+.campo:nth-child(3)  {  /** Selecionar un campo especifico sin necesidad de crear una clase nueva **/
+    grid-column: 1 / 3;
+
+}
+.text {
+    grid-column: 1 / 3;
+}
+
+.campo label {
+
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    display: block;
+
+}
+
+.imput-text {
+    width: 100%;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 10px;
+}
+
+/** Boton enviar con la configuracion de cambiar de color cuando se ponga el raton encima**/
+.boton{
+    background-color: var(--blanco);
+    color: var(--negro);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    margin-top: 5rem;
+    text-transform: uppercase;
+    border-radius: 1rem; 
+    border: none;
+    cursor: pointer;
+    transition: width 2s;
+    height: 3.5rem;
+
+
+}
+
+
+.botonenviar :hover {
+    /** background-color: rgba(247, 65, 65, 0.7); **/
+    color: var(--negro);
+    text-transform: uppercase;
+
+    /** Codigo para hacer efecto de estirar y el boton **/
+    width: 15rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, #fdfcfb 60%, #e2d1c3 30%);
+    transition: width 2s;
+
+}
+
+.enviar .boton {
+    width: 10%;
+}
+
+.campo textarea {  /** Define el tamano del area de mensaje **/
+    height: 100%;
+}
